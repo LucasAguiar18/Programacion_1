@@ -10,9 +10,6 @@ class Autor:
         self.libros = []
         self.premio = premio
 
-#
-
-
 class Libro:
     def __init__(self, titulo, autor):
         self.titulo = titulo
