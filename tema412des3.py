@@ -1,53 +1,59 @@
-"""Lucas Aguiar. Programacion1. 15/10/2024. Desafio 2:Crea una clase `Libro` con atributos como 
-título, género e ISBN. ¿Cómo podrías relacionar esta clase con la clase `Autor`?"""
+"""Lucas Aguiar. Programacion 1. 4/11/2024. 
+Desafío 3:Considera cómo podrías implementar una biblioteca que 
+almacene múltiples autores y libros. ¿Qué estructuras de datos usarías?"""
 
 class Autor:
-
     def __init__(self, nombre, nacionalidad):
         self.nombre = nombre
         self.nacionalidad = nacionalidad
         self.libros = []
 
-    def agregar_libros(self,libro):
-        self.libros.append(libro)
-        
-    def mostrar_libros(self):
-        print(f"\nLibros de {self.nombre}:")
-        for libro in self.libros:
-         print(f"- {libro.titulo}")
-
 class Libro:
-    def __init__(self, titulo, genero, isbn, autor):
+    def __init__(self, titulo, autor):
         self.titulo = titulo
-        self.genero = genero
-        self.isbn = isbn
         self.autor = autor
 
-    def mostrar_datos(self):
-        print(f"Datos del libro:")
-        print(f"Título: {self.titulo}")
-        print(f"Género: {self.genero}")
-        print(f"ISBN: {self.isbn}")
-        print(f"Autor: {self.autor.nombre}")
+class Biblioteca:
+    def __init__(self):
+        self.autores = {}
+        self.libros = {}
 
-#Agregar Libros y Autores
+    def agregar_autor(self, nombre, nacionalidad):
+        autor = Autor(nombre, nacionalidad)
+        self.autores[nombre] = autor
+        print("Autor agregado correctamente")
+        return autor
 
-autor1 = Autor("Lucas", "Uruguayo")
-autor2 = Autor ("Luana", "Uruguaya")
+    def agregar_libro(self, titulo, autor_nombre):
+        if autor_nombre in self.autores:
+            autor = self.autores[autor_nombre]
+            libro = Libro(titulo, autor)
+            autor.libros.append(libro)
+            self.libros[titulo] = libro
+            print("Libro agregado correctamente")
+            return libro
+        else:
+            print("No se encontró el autor")
 
-libro1 = Libro("El alma de la noche", "Novela", "978-84-316-1484-4", autor1)
+    def mostrar_libros(self):
+        print("\nLibros:")
+        for libro in self.libros.values():
+            print(f"- {libro.titulo} de {libro.autor.nombre}")
 
-libro2 = Libro("Mi historia", "Novela", "978-84-316-1485-1", autor2)
+    def mostrar_autores(self):
+        print("\nAutores:")
+        for autor in self.autores.values():
+            print(f"- {autor.nombre} ({autor.nacionalidad})")
+            
+# CREAR BIBLIOTECA
+biblioteca = Biblioteca()
 
-autor1.agregar_libros(libro1)
+# PRUEBAS DE USO
+autor = biblioteca.agregar_autor("Lucas Aguiar", "Uruguayo")
+biblioteca.agregar_libro("El amor en la oscuridad", "Lucas Aguiar")
 
-autor2.agregar_libros(libro2)
+autor = biblioteca.agregar_autor("EL EPEP", "Colombiano")
+biblioteca.agregar_libro("el pepito", "EL EPEP")
 
-#Mostrar datos
-
-libro1.mostrar_datos()
-libro2.mostrar_datos()
-
-autor1.mostrar_libros()
-autor2.mostrar_libros()
-
+biblioteca.mostrar_libros()
+biblioteca.mostrar_autores()
