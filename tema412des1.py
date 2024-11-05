@@ -1,3 +1,6 @@
+"""Lucas Aguiar. Programación 1. 4/11/2024
+ Desafío 1: Amplía la clase `Autor` para incluir una lista de libros escritos por el autor. 
+ Implementa métodos para agregar y eliminar libros de esta lista."""
 class Autor:
     def __init__(self, nombre= "", nacionalidad= ""):
         self.nombre = nombre
