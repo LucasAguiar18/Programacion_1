@@ -4,42 +4,25 @@
  getter y setter para cada atributo.
 """
 
-class Libro:
-    def __init__(self, titulo, autor, isbn):
-        self.__titulo = titulo   # Atributo privado
-        self.__autor = autor     
-        self.__isbn = isbn       
+# Clase base Autor
+class Autor:
+    def __init__(self, nombre, anio_nacimiento):
+        self.nombre = nombre
+        self.anio_nacimiento = anio_nacimiento
 
-    # Getter para el título
-    def get_titulo(self):
-        return self.__titulo
+    def mostrar_info(self):
+        return f"Autor: {self.nombre}, nacido en {self.anio_nacimiento}"
 
-    # Setter para el título
-    def set_titulo(self, titulo):
-        self.__titulo = titulo
+# Clase derivada Poeta
+class Poeta(Autor):
+    def __init__(self, nombre, anio_nacimiento, tipo_poema):
+        super().__init__(nombre, anio_nacimiento)
+        self.tipo_poema = tipo_poema
 
-    # Getter para el autor
-    def get_autor(self):
-        return self.__autor
-
-    # Setter para el autor
-    def set_autor(self, autor):
-        self.__autor = autor
-
-    # Getter para el ISBN
-    def get_isbn(self):
-        return self.__isbn
-
-    # Setter para el ISBN
-    def set_isbn(self, isbn):
-        self.__isbn = isbn
+    def mostrar_info_poeta(self):
+        return f"Poeta: {self.nombre}, nacido en {self.anio_nacimiento}, escribe poesía {self.tipo_poema}"
 
 # Ejemplo de uso
-libro1 = Libro("Cien años de soledad", "Gabriel García Márquez", "978-3-16-148410-0")
-print("Título:", libro1.get_titulo())
-print("Autor:", libro1.get_autor())
-print("ISBN:", libro1.get_isbn())
+poeta = Poeta("Pablo Neruda", 1904, "lírica")
+print(poeta.mostrar_info())          
 
-# Cambiar el título
-libro1.set_titulo("El amor en los tiempos del cólera")
-print("Nuevo título:", libro1.get_titulo())
