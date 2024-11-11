@@ -24,8 +24,7 @@ class Baterista(Musico):
     def instrumento(self):
         return "bateria"
 
-
-
+#ejemplo de uso
 guitarrista = Guitarrista("Lucas")
 baterista = Baterista("Luana")
 
