@@ -55,7 +55,7 @@ autor1.agregar_libro("Memorias del Pasado")
 autor2 = Autor("PEPE", "Argentino")
 autor2.agregar_libro("Caminos Cruzados")
 
-autor3 = Autor("Luis Pérez", "Chileno")
+autor3 = Autor("Luis", "Chileno")
 autor3.agregar_libro("Sombras y Luces")
 autor3.agregar_libro("Reflejos del Alma")
 autor3.agregar_libro("El Último Sol")
