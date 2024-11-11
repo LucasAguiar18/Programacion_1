@@ -18,4 +18,3 @@ poeta = Poeta("Lucas Aguiar", "Uruguayo", "Poesia Lirica")
 print(f"Nombre: {poeta.nombre}")
 print(f"Nacionalidad: {poeta.nacionalidad}")
 print(f"Tipo de poesía: {poeta.tipo_poesia}")
-
