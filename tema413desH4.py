@@ -9,29 +9,27 @@ class Escritor:
         self.genero = genero
 
     def mostrar_datos_escritor(self):
-        print (f"El nombre del escritor es: {self.nombre}")
-        print (f"El género que escribe es: {self.genero}")
+        print(f"El nombre del escritor es: {self.nombre}")
+        print(f"El género que escribe es: {self.genero}")
 
 class Academico:
     def __init__(self, especialidad):
         self.especialidad = especialidad
 
     def mostrar_datos_academico(self):
-        print (f"La especialidad del escritor es: {self.especialidad}")
-
+        print(f"La especialidad del escritor es: {self.especialidad}")
 
 class EscritorAcademico(Escritor, Academico):
-    def __init__(self, nombre, genero, especialidad):
+    def __init__(self, nombre, genero, especialidad, universidad):
         super().__init__(nombre, genero)
         Academico.__init__(self, especialidad)
-
+        self.universidad = universidad
 
     def publicar_articulo_academico(self):
-        print (f"{self.nombre} ha publicado un artículo en la especialidad de {self.especialidad}")
+        print(f"{self.nombre} ha publicado un artículo académico en la Universidad de {self.universidad}.")
 
 # Ejemplo de uso
-
-escritor_academico = EscritorAcademico("Lucas Aguiar", "masculino", "informática")
+escritor_academico = EscritorAcademico("Lucas Aguiar", "Ciencia ficción", "Informática", "la República")
 escritor_academico.mostrar_datos_escritor()
 escritor_academico.mostrar_datos_academico()
 escritor_academico.publicar_articulo_academico()
