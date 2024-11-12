@@ -1,0 +1,10 @@
+Mi presentación:
+Hola me presento soy Lucas Aguiar, estudiante  primer año del profesorado de informática.
+Estoy realizando el desafío 5 del tema: Excepciones, el cual pide lo siguiente:
+"Desarrolla un programa que abra un archivo de texto, lea su contenido y lo muestre. 
+Implementa manejo de excepciones para archivos que no existan y usa finally para asegurarte de que el archivo se cierre adecuadamente en cualquier caso. "
+
+Cree este block de notas con la finalidad de tener un archivo ejecutable en mi programa de python, quiero tener un archivo con los permisos par poder hacer que mi programa sea funcional.
+
+HOLA MUNDO
+
