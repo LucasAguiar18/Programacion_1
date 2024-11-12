@@ -24,5 +24,3 @@ except PermissionError:
 finally:
     # Cerramos el archivo
     print("Archivo cerrado")
-
-
